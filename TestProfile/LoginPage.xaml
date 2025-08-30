@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestProfile.LoginPage"
+             xmlns:viewmodels="clr-namespace:TestProfile.ViewModel"
+             x:DataType="viewmodels:LoginViewModel"
+             Title="LoginPage">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+    <VerticalStackLayout>
+        <Label 
+            Text="Hello Login"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Button Text="Go To User"
+                Command="{Binding GoToProfileCommand}"></Button>
+        <Button Text="Back To Main"
+                Command="{Binding BackToMainCommand}"></Button>
+    </VerticalStackLayout>
+</ContentPage>
