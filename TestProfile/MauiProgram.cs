@@ -20,14 +20,18 @@ namespace TestProfile
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
             //builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<MainViewModel>();
             //builder.Services.AddTransient<UserProfilePage>();
             builder.Services.AddTransient<UserProfileViewModel>();
-            builder.Services.AddSingleton<INavigationService,MauiNavigationService>();
+            builder.Services.AddSingleton<INavigationService, MauiNavigationService>();
+
+            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
+            Routing.RegisterRoute(nameof(UserProfilePage), typeof(UserProfilePage));
+
             return builder.Build();
         }
     }
